@@ -1,0 +1,26 @@
+---
+layout: minimal
+date: 2024-06-21
+---
+
+# Introdução ao projeto e algumas considerações sobre infra e riscos
+
+A SVZap nasce como uma plataforma de redirecionamento digital que permite aos clientes uma maior integração, facilitando as vendas.
+
+Seu diferencial é integrar features de várias plataformas em uma oferta única de valor.
+
+As maiores barreiras tecnológicas são:
+- Alta escalabildade - precisa ter uma arquitetura multi-tenant para suportar projetos de várias empresas
+- Integração com APIs da Meta ou, pior do que isso, criação de extensões para o navegador
+    - Nota: injetar JS direto no browser vai contra as diretrizes da Meta e pode fazer com que a nossa empresa seja processada, favor evitar e pagar a API da Meta.
+    - Não esquecer de incluir gastos com API da Meta no plano de negócios
+- Gastos com infraestrutura
+    - Armazenamento dos dados de cada usuário provavelmente custa... caro
+        - Como podemos planilhar isso?
+    - Considerar os gastos de armazenamento de 100+ áudios em cada plano
+    - Negócio precisa ser precificado de forma a "ignorar" custos de infraestrutura
+    - O nível de processamento de dados que o projeto requer faz com que seja inviável correr da cloud (AWS é provavelmente minha primeira opção), por mais que fazer algo 
+    on-premises seja infinitamente mais barato 
+    - Infraestrutura = exposição ao dólar = necessidade de aumentar preços para manter a margem
+
+Considerações sobre escalabilidade podem ser encontradas no post do blog acima desse c:

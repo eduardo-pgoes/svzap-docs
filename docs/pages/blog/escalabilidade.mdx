@@ -1,0 +1,21 @@
+---
+layout: minimal
+---
+
+# Escalabilidade e considerações sobre arquitetura
+
+Esse projeto _precisa_ escalar muito para ser lucrativo. Como podemos escalar esse projeto?
+
+- Montagem de API de arquitetura Serverless + API Gateway
+- Montagem de API de arquitetura monolito
+
+A 1a gasta mais mas escala mais. A 2a gasta menos, mas vai dar mais trabalho de escalar se for necessário.
+Eu consigo imaginar que as rotas de redirecionamento vão ser infinitamente mais usadas do que as de admin - se for pela rota dos monólitos, o mais interessante provavelmente é
+fazer um microsserviço para o redirecionamento, especificamente... Argh.
+
+Além disso, precisamos pensar sobre as tecnologias. Eu penso em montar uma API com Ruby e consumir ela via front-end React. Isso é uma saída se não for Serverless - se for Serverless,
+algo como Go (mesmo não tendo experiência) ou Node.js (preferível, tenho muita experiência) vai funcioanr melhor.
+
+Para fazer um monolito multi-tenant com Rails, tenho alguns links interessantes:
+- https://blog.appsignal.com/2020/12/02/building-a-multi-tenant-ruby-on-rails-app-with-subdomains.html
+- https://www.kolide.com/blog/kolide-s-30-line-rails-multi-tenant-strategy
